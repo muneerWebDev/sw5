@@ -1,0 +1,32 @@
+.paypal-unified-ec--outer-button-container {
+    .clearfix();
+}
+
+.paypal-unified-ec--button-container {
+    .unitize(margin-top, 10);
+}
+
+.product--table .paypal-unified-ec--button-container {
+    .unitize(margin-top, 0);
+}
+
+.register--login .paypal-unified-ec--outer-button-container {
+    line-height: normal;
+}
+
+.paypal-unified-ec--button-placeholder {
+    .unitize(height, 35);
+}
+
+@media screen and(min-width: @phoneLandscapeViewportWidth) {
+    .product--table .paypal-unified-ec--button-container {
+        .unitize(margin-top, 10);
+    }
+}
+
+@media screen and(min-width: @tabletViewportWidth) {
+    .product--table .paypal-unified-ec--button-container {
+        .unitize(margin-top, -5);
+        .unitize(margin-bottom, 10);
+    }
+}

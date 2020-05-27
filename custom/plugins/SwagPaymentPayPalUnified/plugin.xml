@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">PayPal</label>
+    <label lang="en">PayPal</label>
+
+    <version>2.7.0</version>
+    <copyright>(c) by shopware AG</copyright>
+    <license>MIT</license>
+    <link>http://store.shopware.com</link>
+    <author>shopware AG</author>
+    <compatibility minVersion="5.2.0" maxVersion="5.99.99"/>
+
+    <changelog version="2.7.0">
+        <changes lang="de">
+            PT-10536 - Behebt Anzeigefehler des Logos in Bestellbestätigungsmail;
+            PT-11361 - Entfernt Werbung für Kostenlose Retouren;
+            PT-11469 - Shop-Einstellungen werden im Firefox wieder korrekt geladen;
+            PT-11574 - Behebt Fehler des Express-Checkout-Buttons in Produkt-Listings;
+            PT-11575 - Javascript auf der Bestellbestätigungsseite verbessert, wenn der In-Context Modus benutzt wird;
+        </changes>
+        <changes lang="en">
+            PT-10536 - Fixes display error of logo in order confirmation mail;
+            PT-11361 - Remove free return advertising;
+            PT-11469 - Shop settings are loaded correctly in Firefox again;
+            PT-11574 - Fixes error of Express Checkout button in product listings;
+            PT-11575 - Improve Javascript on confirm page, if in-context mode is used;
+        </changes>
+    </changelog>
+
+    <changelog version="2.6.5">
+        <changes lang="de">Erweiterbarkeit durch Dritt-Plugins verbessert;</changes>
+        <changes lang="en">Improved extensibility via third-party plugins;</changes>
+    </changelog>
+
+    <changelog version="2.6.4">
+        <changes lang="de">PT-11190 - Kompatibilität mit älteren Shopware-Versionen wiederhergestellt;</changes>
+        <changes lang="en">PT-11190 - Restore compatibility with older Shopware versions;</changes>
+    </changelog>
+
+    <changelog version="2.6.3">
+        <changes lang="de">PT-11166 - Express Checkout unterstützt nun wieder korrekt die "Warenkorb übertragen" Option;</changes>
+        <changes lang="en">PT-11166 - Express Checkout correctly considers the "Submit cart" configuration again;</changes>
+    </changelog>
+
+    <changelog version="2.6.2">
+        <changes lang="de">PT-11003 - Fehler im Javascript behoben;</changes>
+        <changes lang="en">PT-11003 - Fix error in Javascript;</changes>
+    </changelog>
+
+    <changelog version="2.6.1">
+        <changes lang="de">PT-11003 - Fehler beim Update behoben;</changes>
+        <changes lang="en">PT-11003 - Fix error on update;</changes>
+    </changelog>
+
+    <changelog version="2.6.0">
+        <changes lang="de">
+            PT-11003 - Neue Option für das Bewerben von Ratenzahlung;
+            PT-11082 - Umsatzsteuer-ID wird nun wieder korrekt berücksichtigt;
+        </changes>
+        <changes lang="en">
+            PT-11003 - New option for advertising installment payment;
+            PT-11082 - VAT ID is now correctly considered again;
+        </changes>
+    </changelog>
+
+    <changelog version="2.5.2">
+        <changes lang="de">PT-11021 - Fehler im Express Checkout behoben;</changes>
+        <changes lang="en">PT-11021 - Fix error in Express Checkout;</changes>
+    </changelog>
+
+    <changelog version="2.5.1">
+        <changes lang="de">
+            PT-10636 - Berücksichtigt nun Kundengruppen Einstellungen korrekt;
+            PT-10996 - Setzt nun mindestens Shopware 5.6.3 für das Payment-Token-Feature voraus;
+        </changes>
+        <changes lang="en">
+            PT-10636 - Now considers customer group settings correctly;
+            PT-10996 - Now requires at least Shopware 5.6.3 for the payment token feature;
+        </changes>
+    </changelog>
+
+    <changelog version="2.5.0">
+        <changes lang="de">
+            PT-9896 - Neue allgemeine Option für das Warenkorb übertragen hinzugefügt;
+            PT-10621 - Mit Shopware 5.6 kann nun die Session wiederhergestellt werden, falls diese verloren geht, während der Kunde sich auf der PayPal Seite befindet;
+            PT-10823 - Wenn verschiedene Aktionen über das PayPal Bestellmodul ausgelöst werden, wird nun auch der Zahlungsstatus der Bestellung aktualisiert;
+            PT-10825 - Anzeige der Smart Payment Buttons verbessert;
+            PT-10855 - Problem behoben, dass manchmal beim Erstellen einer Zahlung für den In-Context-Modus aufgetreten ist;
+            PT-10919 - Fehlermeldungen im Bestellmodul sind nun fest gesetzt;
+            PT-10953 - Anzeige des Maximalbetrags zur Wiedergutschrift im Bestellmodul wurde korrigiert;
+        </changes>
+        <changes lang="en">
+            PT-9896 - Add new general option for shopping cart submit;
+            PT-10621 - With Shopware 5.6 the session can now be restored if it gets lost while the customer is on the PayPal page;
+            PT-10823 - If several actions are triggered via the PayPal order module, the payment status of the order is now also updated;
+            PT-10825 - Improve displaying of Smart Payment Buttons;
+            PT-10855 - Fixed problem that sometimes occurred when creating a payment for in-context mode;
+            PT-10919 - Error messages in the order module are now sticky;
+            PT-10953 - Fix displaying of maximum amount for refund in order module;
+        </changes>
+    </changelog>
+
+    <changelog version="2.4.1">
+        <changes lang="de">PT-10794 - Anzeigefehler mit aktivierten SPB auf der Bestätigungsseite behoben;</changes>
+        <changes lang="en">PT-10794 - Fix display bug with activated SPB on confirm page;</changes>
+    </changelog>
+
+    <changelog version="2.4.0">
+        <changes lang="de">PT-10573, PT-10724, PT-10732, PT-10765 - Smart Payment Buttons integriert;</changes>
+        <changes lang="en">PT-10573, PT-10724, PT-10732, PT-10765 - Introduced Smart Payment Buttons;</changes>
+    </changelog>
+
+    <changelog version="2.3.0">
+        <changes lang="de">SW-24197, PT-10430 - Shopware 5.6 Kompatibilität;</changes>
+        <changes lang="en">SW-24197, PT-10430 - Shopware 5.6 compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.2.4">
+        <changes lang="de">PT-10584 - Fehler in der Suche im Bestellmodul behoben;</changes>
+        <changes lang="en">PT-10584 - Fixed search in order module;</changes>
+    </changelog>
+
+    <changelog version="2.2.3">
+        <changes lang="de">PT-10562 - Bestellbestätigung wird nun trotzdem wieder versendet, auch wenn der Bezahlvorgang fehlgeschlagen ist. Stellt Kompatibilität mit anderen Plugins wieder her;</changes>
+        <changes lang="en">PT-10562 - Order confirmation will now be sent again, even if the payment process has failed. Restores compatibility with other plugins;</changes>
+    </changelog>
+
+    <changelog version="2.2.2">
+        <changes lang="de">PT-10330 - Wenn die Bestellnummer mitgesendet wird, wird nun in einem Fehlerfall zur Abschlussseite, statt zur Zahlungsartenauswahlseite, umgeleitet;</changes>
+        <changes lang="en">PT-10330 - If the order number gets sent and an error occurs, a redirect to the finish page is done, instead of the payment method selection page;</changes>
+    </changelog>
+
+    <changelog version="2.2.1">
+        <changes lang="de">PT-10471 - Ajax Calls des Plugins verbessert;</changes>
+        <changes lang="en">PT-10471 - Improve ajax calls of the plugin;</changes>
+    </changelog>
+
+    <changelog version="2.2.0">
+        <changes lang="de">
+            PT-10162 - Die Sprache für den Express-Checkout kann jetzt bei Bedarf individuell eingestellt werden;
+            PT-10335 - Problem mit Bestellnummern mit Prefix in der PayPal Bestellübersicht behoben;
+            PT-10349 - Das Bundesland wird nun beim Express Checkout korrekt gespeichert;
+            PT-10371 - PayPal Dokument Erweiterungen werden nur noch geladen, wenn der richtige Dokumententyp ausgewählt wurde;
+            PT-10373 - Ajax Calls des Plugins verbessert;
+        </changes>
+        <changes lang="en">
+            PT-10162 - If required the locale code for the express checkout can now be set individually;
+            PT-10335 - Solved problem with order numbers with prefix in PayPal order overview;
+            PT-10349 - The country state is now saved correctly during express checkout;
+            PT-10371 - PayPal document extensions are only loaded if the correct document type has been selected;
+            PT-10373 - Improve ajax calls of the plugin;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.3">
+        <changes lang="de">
+            PT-7290 - Bestellungen ohne Versandart sind nun nicht mehr möglich;
+            PT-10236 - Adresse des Kunden wird nun wieder korrekt auf der Abschlussseite angezeigt;
+        </changes>
+        <changes lang="en">
+            PT-7290 - Orders without shipping method are no longer possible;
+            PT-10236 - Customer's address is now correctly displayed on the finish page again;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.2">
+        <changes lang="de">PT-10176 - Prüfung des Risk-Management-Auschlusses verbessert;</changes>
+        <changes lang="en">PT-10176 - Improved risk management exclusion check;</changes>
+    </changelog>
+
+    <changelog version="2.1.1">
+        <changes lang="de">
+            PT-9974 - Kompatibilität mit Microsoft Browsern verbessert;
+            PT-10102 - Javascript Fehler behoben, falls PayPal über das Risk-Management ausgeschlossen wurde;
+        </changes>
+        <changes lang="en">
+            PT-9974 - Improve compatibility with Microsoft browsers;
+            PT-10102 - Fix javascript error, if PayPal was excluded via risk management;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.0">
+        <changes lang="de">
+            PT-9419 - Der Express-Checkout Button kann nun optional auf Kategorieseiten angezeigt werden. Die Shopware-Einstellung "Kaufenbutton im Listing anzeigen" muss aktiviert sein;
+            PT-9754 - Verbessert die Kompatibilität mit anderen Plugins in der PDF-Belegerstellung;
+            PT-9965 - Verhalten Express Checkout Button auf der Registrierungsseite verbessert;
+            PT-9989 - Der Kunde hat nun nicht mehr die Möglichkeit auf der PayPal Seite seine Lieferadresse zu ändern;
+        </changes>
+        <changes lang="en">
+            PT-9419 - The Express-Checkout button can now be displayed optionally on category pages. The Shopware setting "Display buy button in listing" must be activated;
+            PT-9754 - Improve compatibility with other plugins in PDF document creation;
+            PT-9965 - Improve behaviour of Express Checkout button on registration page;
+            PT-9989 - The customer has no longer the option to change the shipping address on the PayPal page;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.3">
+        <changes lang="de">PT-9990 - Kundenkommentare werden bei Zahlungen über Plus wieder korrekt gespeichert;</changes>
+        <changes lang="en">PT-9990 - Customer comments are saved correctly again for payments via Plus;</changes>
+    </changelog>
+
+    <changelog version="2.0.2">
+        <changes lang="de">PT-9947 - Übertragung der Sprachcodes für deutschsprachige Länder korrigiert;</changes>
+        <changes lang="en">PT-9947 - Fixed language codes transmission for German speaking countries;</changes>
+    </changelog>
+
+    <changelog version="2.0.1">
+        <changes lang="de">
+            PT-9838 - Zum Ändern des Bezahlstatus wird nun die Core-Funktionalität genutzt;
+            PT-9942 - Kompatibilität mit Custom Products verbessert;
+            PT-9945 - Abweichende Steuerregeln werden nun korrekt angewendet, wenn mit Express Checkout bezahlt wird;
+        </changes>
+        <changes lang="en">
+            PT-9838 - The core functionality is now used to change the payment status;
+            PT-9942 - Improved compatibility with Custom Products;
+            PT-9945 - Different tax rules are now correctly applied when paying with Express Checkout;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.0">
+        <changes lang="de">
+            PT-9704 - Paypal Expresscheckout Konfiguration optimiert
+            PT-9705 - Google Pagespeed Kritieren optimiert
+            PT-9738 - Fehler in der Suche der Paypal Bestellübersicht behoben
+            PT-9752 - Bessere Fehlermeldungen bei der Übermittlung von inkorrekten Adressdaten
+        </changes>
+        <changes lang="en">
+            PT-9704 - Optimized Paypal expresscheckout configuration
+            PT-9705 - Optimization for Google pagespeed
+            PT-9738 - Fixed an error in order overview search
+            PT-9752 - Optimized error messages when submitting incorrect address data
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.1">
+        <changes lang="de">
+            PT-8708 - Obsoleten Code und Tabellenspalte entfernt;
+            PT-9564 - Kompatibilität mit Safari auf iOS und MacOS verbessert;
+            PT-9710 - Übertragung von Preisen zu PayPal verbessert;
+        </changes>
+        <changes lang="en">
+            PT-8708 - Removed obsolete code and table column;
+            PT-9564 - Improved compatibility with Safari on iOS and MacOS;
+            PT-9710 - Improved transmission of prices to PayPal;
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.0">
+        <changes lang="de">
+            PT-8708, PT-9707 - Die PayPal Experience Profile Logik wurde durch den Application Context ersetzt. Dadurch entfällt die Bildauswahl für das Logo auf der PayPal-Seite. Dies wird nun über das Händlerkonto bezogen;
+            PT-9269 - Englische Übersetzungen korrigiert;
+            PT-9649 - Nach einer Rückerstattung wird der Status der Bestellung korrekt gesetzt;
+            PT-9710 - Übertragung von Preisen zu PayPal verbessert;
+        </changes>
+        <changes lang="en">
+            PT-8708, PT-9707 - The PayPal Experience Profile logic has been replaced by the Application Context. Therefore the image selection for the logo on the PayPal page is no longer necessary. This will now be retrieved via the merchant account;
+            PT-9269 - Fixed English translation;
+            PT-9649 - The status of the order will be set correctly after a refund;
+            PT-9710 - Improved transmission of prices to PayPal;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.7">
+        <changes lang="de">
+            PT-9420 - Ratenzahlung wird nun korrekt nach der Registrierung angezeigt;
+            PT-9542 - Anzeige Fehler beim Zahlungsartwechsel behoben;
+            PT-9590 - Netto/Brutto Behandlung bei Express Checkout verbessert;
+            PT-9596 - Behandlung von 'Steuerfrei für Unternehmen' verbessert;
+            PT-9604 - Versandkosten werden nun bei Nutzung von Plus korrekt zu PayPal übertragen;
+        </changes>
+        <changes lang="en">
+            PT-9420 - After registration installments is shown correctly;
+            PT-9542 - Fix display bug on payment method change;
+            PT-9590 - Improve net/gross handling on Express Checkout;
+            PT-9596 - Improve handling of tax free for companies;
+            PT-9604 - Shipping costs are now transferred correctly to PayPal if Plus is used;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.6">
+        <changes lang="de">
+            PT-9367 - Aufgrund des PayPal Risk-Managements werden Custom Products Optionen nicht mehr als einzelne Warenkorb Positionen übertragen. Evtl. Aufschläge werden auf den Produktpreis aufgerechnet;
+            PT-9383 - Workflow mit steuerfreien oder Netto-Bestellungen verbessert;
+            PT-9424 - AGB-Checkbox Validierung verbessert;
+            PT-9546 - Setzen des Ländersprachcodes korrigiert;
+        </changes>
+        <changes lang="en">
+            PT-9367 - Due to PayPal's risk management, Custom Products options are no longer transferred as single shopping cart items. Possible surcharges will be added to the product price;
+            PT-9383 - Improve workflow with tax free and net orders;
+            PT-9424 - Improve ToS checkbox validation;
+            PT-9546 - Fix setting of country language code;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.5">
+        <changes lang="de">
+            PT-9318 - Sprache der Buttons für Express Checkout und In-Context richtet sich nun nach der Shopsprache;
+            PT-9366 - Javascript Warnung korrigiert;
+            Datum in der Bestellübersicht korrigiert;
+        </changes>
+        <changes lang="en">
+            PT-9318 - The shop language is now considered for the language of the express checkout and in-context buttons;
+            PT-9366 - Fix Javascript warning;
+            Fix date in order overview;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.4">
+        <changes lang="de">PT-9241 - Optimierung von PayPal Bannern und Buttons;</changes>
+        <changes lang="en">PT-9241 - Optimize PayPal banners and buttons;</changes>
+    </changelog>
+
+    <changelog version="1.0.3">
+        <changes lang="de">
+            PT-9252 - Anzeige des Express Checkout Buttons korrigiert;
+            PT-9285 - Logo für Drittanbieter Zahlungsart im Plus iFrame nun pflegbar;
+            PT-9290 - Einstellungen werden jetzt entfernt, wenn dies bei der Deinstallation ausgewählt wird;
+        </changes>
+        <changes lang="en">
+            PT-9252 - Fix displaying of express checkout button;
+            PT-9285 - Logo for third party payment in Plus iFrame method can now be maintained;
+            PT-9290 - If selected on uninstallation, the settings now will be removed;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.2">
+        <changes lang="de">PT-9245 - Bezahldatum wird nun korrekt gesetzt;</changes>
+        <changes lang="en">PT-9245 - Date of payment is now set correctly;</changes>
+    </changelog>
+
+    <changelog version="1.0.1">
+        <changes lang="de">
+            PT-9236 - PDF Elemente lassen sich nun korrekt editieren;
+            PT-9267 - Benutzt nun minifizierte Javascript Library;
+        </changes>
+        <changes lang="en">
+            PT-9236 - PDF elements could now edited correctly;
+            PT-9267 - Now uses minified Javascript library;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.0">
+        <changes lang="de">Erstveröffentlichung;</changes>
+        <changes lang="en">First release;</changes>
+    </changelog>
+</plugin>

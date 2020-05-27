@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <imports>
+        <import resource="services/var_dump.xml"/>
+        <import resource="services/logger.xml"/>
+        <import resource="services/collectors.xml"/>
+    </imports>
+
+    <parameters>
+        <parameter key="frosh_profiler.cache_dir">%kernel.cache_dir%/FroshProfiler</parameter>
+        <parameter key="frosh_profiler.view_dir">%frosh_profiler.plugin_dir%/Resources/views</parameter>
+        <parameter key="frosh_profiler.smarty_dir">%frosh_profiler.plugin_dir%/Resources/smarty</parameter>
+        <parameter key="frosh_profiler.smarty_default_plugin_dir">%frosh_profiler.plugin_dir%/Components/Smarty/sysplugins/</parameter>
+    </parameters>
+
+    <services>
+        <service id="FroshProfiler\Controller\Frontend\Profiler">
+            <tag name="shopware.controller" module="frontend" controller="profiler"/>
+        </service>
+
+        <service id="frosh_profiler.collector" class="FroshProfiler\Components\Collector">
+            <argument type="tagged" tag="profiler.collector"/>
+            <argument type="service" id="frosh_profiler.cache" />
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="frosh_profiler.current.profile"/>
+            <argument type="service" id="frosh_profiler.config"/>
+        </service>
+
+        <service id="frosh_profiler.cache" class="Doctrine\Common\Cache\FilesystemCache">
+            <argument type="string">%frosh_profiler.cache_dir%</argument>
+        </service>
+
+        <service id="frosh_profiler.stop_watch" class="Symfony\Component\Stopwatch\Stopwatch"/>
+
+        <service id="frosh_profiler.block_annotator" class="FroshProfiler\Components\BlockAnnotation\BlockAnnotator">
+            <argument type="service" id="frosh_profiler.block_splitter" />
+        </service>
+
+        <service id="frosh_profiler.block_splitter" class="FroshProfiler\Components\BlockAnnotation\BlockSplitter" />
+
+        <service id="frosh_profiler.config" class="Shopware\Components\Plugin\CachedConfigReader">
+            <factory service="shopware.plugin.cached_config_reader" method="getByPluginName"/>
+            <argument type="string">FroshProfiler</argument>
+        </service>
+
+        <!-- Event Subscriber -->
+        <service id="frosh_profiler.subscriber.collector" class="FroshProfiler\Subscriber\Collector">
+            <argument type="service" id="service_container" />
+            <argument type="service" id="frosh_profiler.current.profile"/>
+            <argument type="service" id="frosh_profiler.config"/>
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="frosh_profiler.subscriber.controller_profiler" class="FroshProfiler\Subscriber\ProfilerController">
+            <argument type="string">%frosh_profiler.view_dir%</argument>
+            <argument type="service" id="template" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="frosh_profiler.subscriber.block_annotation" class="FroshProfiler\Subscriber\BlockAnnotation">
+            <argument type="service" id="config"/>
+            <argument type="service" id="frosh_profiler.config"/>
+            <argument type="service" id="frosh_profiler.block_annotator"/>
+            <argument type="service" id="front"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="frosh_profiler.subscriber.cache" class="FroshProfiler\Subscriber\CacheSubscriber">
+            <argument type="string">%frosh_profiler.cache_dir%</argument>
+            <argument type="string">%frosh_profiler.view_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="frosh_profiler.subscriber.database_profiler" class="FroshProfiler\Subscriber\DatabaseProfiler">
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="frosh_profiler.subscriber.smarty_profiler" class="FroshProfiler\Subscriber\SmartyProfiler">
+            <tag name="shopware.event_subscriber"/>
+            <argument>%frosh_profiler.smarty_default_plugin_dir%</argument>
+        </service>
+
+        <service id="frosh_profiler.subscriber.javascript" class="FroshProfiler\Subscriber\JavascriptSubscriber">
+            <argument type="service" id="frosh_profiler.config"/>
+            <argument type="string">%frosh_profiler.view_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="frosh_profiler.current.profile" class="FroshProfiler\Components\Struct\Profile"/>
+
+        <service id="snippet_resource"
+                 class="FroshProfiler\Components\Smarty\SnippetResource">
+            <argument type="service" id="snippets"/>
+            <argument>%shopware.snippet.showSnippetPlaceholder%</argument>
+        </service>
+
+        <service id="frosh_profiler.forms.data_extractor"
+                 class="Symfony\Component\Form\Extension\DataCollector\FormDataExtractor"/>
+
+        <service id="frosh_profiler.forms.data_collector" class="Symfony\Component\Form\Extension\DataCollector\FormDataCollector">
+            <argument type="service" id="frosh_profiler.forms.data_extractor"/>
+        </service>
+
+        <service id="frosh_profiler.forms.form_listener" class="FroshProfiler\Components\FormListener">
+            <argument type="service" id="frosh_profiler.forms.data_collector"/>
+            <tag name="form.type_extension" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType" />
+        </service>
+    </services>
+</container>
