@@ -10,9 +10,6 @@
             </li>
         {/block}
 
-            <li class="navigation--entry entry--menu-left" role="menuitem">
-                <a href="#dsgdfg">action</a>
-            </li>
         {* Search form *}
         {block name='frontend_index_search'}
             <li class="navigation--entry entry--search" role="menuitem" data-search="true" aria-haspopup="true"{if $theme.focusSearch && {controllerName|lower} == 'index'} data-activeOnStart="true"{/if} data-minLength="{config name="MinSearchLenght"}">

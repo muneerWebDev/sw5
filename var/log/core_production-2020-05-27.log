@@ -1,1 +1,0 @@
-[2020-05-27 13:54:57] core.CRITICAL: Syntax Error in template &quot;D:\xampp\htdocs\sw5\themes\Frontend\Hatslogic\widgets\emotion\components\component_banner.tpl&quot;  on line 1 &quot;{extends file='widgets/emotion/components/component_banner.tpl'}&quot; illegal recursive call of &quot;widgets/emotion/components/component_banner.tpl&quot; [] {"uid":"fb3c41f"}
